@@ -303,21 +303,12 @@ Experience
     </div>
     <div>
       <label className="block text-sm text-gray-600 mb-2">Phone number</label>
-     <div className="flex gap-2">
-  <div className="relative w-16">
-    <select className="w-full px-2 py-2 bg-gray-100 border border-gray-300 rounded-md appearance-none text-center">
-      <option value="">+91</option>
-      
-    </select>
-    <div className="absolute left-2 top-1/2 -translate-y-1/2 pointer-events-none">
-      <svg width="20" height="15" viewBox="0 0 20 15">
-        <rect width="20" height="5" fill="#FF9933"/>
-        <rect y="5" width="20" height="5" fill="#FFFFFF"/>
-        <rect y="10" width="20" height="5" fill="#138808"/>
-        <circle cx="10" cy="7.5" r="2.5" fill="#000080"/>
-      </svg>
-    </div>
-  </div>
+    <div className="flex gap-2">
+  <select className="w-16 px-2 py-2 bg-gray-100 border border-gray-300 rounded-md text-center" style={{ fontSize: '1.2rem' }}>
+    <option value="+91">🇮🇳</option>
+    <option value="+1">🇺🇸</option>
+    <option value="+44">🇬🇧</option>
+  </select>
         <input
           type="text"
           placeholder="8332883854"
