@@ -321,37 +321,37 @@ Add user
       </div>
     </div>
     <div>
-      <label className="block text-sm text-gray-600 mb-2">Phone number</label>
-      <div className="relative">
-        <select 
-          value={selectedCountryCode}
-          onChange={(e) => setSelectedCountryCode(e.target.value)}
-          className="absolute left-0 top-0 h-full w-24 px-2 bg-gray-100 border border-gray-300 rounded-l-md border-r-0 text-sm appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500 focus:z-10" 
-          style={{
-            backgroundImage: selectedCountryCode === '+91' 
-              ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Crect width='900' height='600' fill='%23FF9933'/%3E%3Crect y='200' width='900' height='200' fill='%23FFFFFF'/%3E%3Crect y='400' width='900' height='200' fill='%23138808'/%3E%3Ccircle cx='450' cy='300' r='40' fill='%23000080'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
-              : selectedCountryCode === '+1'
-              ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Crect width='7410' height='3900' fill='%23B22234'/%3E%3Cpath d='M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0' stroke='%23fff' stroke-width='300'/%3E%3Crect width='2964' height='2100' fill='%233C3B6E'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
-              : `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`,
-            backgroundSize: '16px 12px, 12px 12px',
-            backgroundPosition: '6px center, right 6px center',
-            backgroundRepeat: 'no-repeat',
-            paddingLeft: '28px',
-            paddingRight: '24px'
-          }}>
-          <option value="+91">+91</option>
-          <option value="+1">+1</option>
-          <option value="+44">+44</option>
-        </select>
-        <input
-          type="text"
-          placeholder="8332883854"
-          value={profileData.phone}
-          onChange={(e) => handleProfileChange('phone', e.target.value)}
-          className="w-full pl-24 pr-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-        />
-      </div>
-    </div>
+  <label className="block text-sm text-gray-600 mb-2">Phone number</label>
+  <div className="relative">
+    <select 
+      value={selectedCountryCode}
+      onChange={(e) => setSelectedCountryCode(e.target.value)}
+      className="absolute left-0 top-0 h-full w-16 px-2 bg-gray-100 border border-gray-300 rounded-l-md border-r-0 text-sm appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500 focus:z-10 text-transparent" 
+      style={{
+        backgroundImage: selectedCountryCode === '+91' 
+          ? `url("/flag.png"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
+          : selectedCountryCode === '+1'
+          ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Crect width='7410' height='3900' fill='%23B22234'/%3E%3Cpath d='M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0' stroke='%23fff' stroke-width='300'/%3E%3Crect width='2964' height='2100' fill='%233C3B6E'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
+          : `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`,
+        backgroundSize: '20px 15px, 12px 12px',
+        backgroundPosition: '8px center, right 6px center',
+        backgroundRepeat: 'no-repeat',
+        paddingLeft: '32px',
+        paddingRight: '24px'
+      }}>
+      <option value="+91">🇮🇳</option>
+      <option value="+1">🇺🇸</option>
+      <option value="+44">🇬🇧</option>
+    </select>
+    <input
+      type="text"
+      placeholder="8332883854"
+      value={profileData.phone}
+      onChange={(e) => handleProfileChange('phone', e.target.value)}
+      className="w-full pl-20 pr-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+    />
+  </div>
+</div>
     <div>
       <label className="block text-sm text-gray-600 mb-2">Alternate Phone no</label>
       <input
