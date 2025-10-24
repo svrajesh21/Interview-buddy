@@ -220,7 +220,7 @@ Add user
   </div>
 </div>
 </div>
-{/* Tabs - No container, just buttons floating */}
+{/* Tabs */}
 <div className="flex gap-2">
   <button
     onClick={() => setActiveTab('basic')}
@@ -245,7 +245,7 @@ Add user
 
 {/* Tab Content - Separate Container */}
 {activeTab === 'basic' && (
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+<div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Basic Details</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -421,7 +421,7 @@ Add user
 {activeTab === 'education' && (
 <>
   {/* Education Details - Separate Container */}
-  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+  <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
    <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Education Details</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -480,7 +480,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 
 {/* Skills & Projects - Separate Container */}
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+<div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
   <div className="flex items-center justify-between mb-6">
   <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3>
   <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -514,7 +514,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {activeTab === 'experience' && (
 <>
 {/* Work Experience - Separate Container */}
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+<div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Work Experience</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -609,7 +609,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {/* LinkedIn and Resume side by side */}
 <div className="grid grid-cols-2 gap-6">
 {/* LinkedIn Box */}
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+<div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">LinkedIn</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -631,7 +631,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 
 {/* Resume Box */}
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+<div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">Resume</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -654,7 +654,6 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 )}
 </main>
-
 {/* Add/Edit Modal */}
 {isModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
