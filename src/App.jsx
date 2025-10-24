@@ -88,8 +88,7 @@ setProfileData(prev => ({
 return (
 <div className="min-h-screen bg-gray-50">
 {/* Header */}
-<header className="bg-white border-b border-gray-200 shadow-sm">
-  <div className="w-full px-6 py-4 flex items-center">
+<header className="bg-white border-b border-gray-200 shadow-md">  <div className="w-full px-6 py-4 flex items-center">
  <img 
   src="/profile-section.webp"
   alt="LOGO"
@@ -122,7 +121,8 @@ return (
 </button>
 </div>
 </div>
-</header>{/* Main Content */}
+</header>
+{/* Main Content */}
 <main className="w-full px-6 py-8">
 {!showProfile ? (
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -658,8 +658,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {isModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
     <div className="absolute right-0 top-0 h-full w-1/2 bg-white shadow-2xl p-8 overflow-y-auto">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 shadow-sm">
-        <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 shadow-sm">        <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
         <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-gray-600">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
