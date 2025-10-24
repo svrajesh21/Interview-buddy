@@ -13,6 +13,7 @@ const [modalMode, setModalMode] = useState('add');
 const [formData, setFormData] = useState({ name: '', email: '' });
 const [showProfile, setShowProfile] = useState(false);
 const [activeTab, setActiveTab] = useState('basic');
+const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
 const [profileData, setProfileData] = useState({
 firstName: '',
 lastName: '',
@@ -173,34 +174,45 @@ Add user
 /* Profile Page */
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
 {/* Profile Header */}
-<div className="p-8 border-b border-gray-200">
-<div className="flex items-center gap-6">
-<div className="relative group" style={{ filter: 'drop-shadow(0 0 60px rgba(168, 85, 247, 0.4))' }}>
-  <div className="w-32 h-32 bg-purple-100 rounded-full flex items-center justify-center border-4 border-white">
-    <svg className="w-16 h-16 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+<div className="px-8 py-6 border-b border-gray-200 relative overflow-hidden bg-white">
+  {/* Background decorative circles */}
+  <div className="absolute inset-0 pointer-events-none">
+    {/* Large purple circle on left */}
+    <svg className="absolute" style={{ left: '-20%', top: '-80%', width: '40%', height: '250%' }} viewBox="0 0 400 400" fill="none">
+      <circle cx="200" cy="200" r="180" fill="#FEFAFF" opacity="0.9"/>
     </svg>
-    <button className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
-      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-      </svg>
-    </button>
+    {/* Semi-concentric circles facing right with huge gaps */}
+    <svg className="absolute" style={{ right: '-35%', top: '-120%', width: '140%', height: '350%' }} viewBox="0 0 1000 1000" fill="none">
+      <path d="M 500 220 A 280 280 0 0 1 500 780" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
+      <path d="M 500 70 A 430 430 0 0 1 500 930" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
+      <path d="M 500 -130 A 630 630 0 0 1 500 1130" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
+    </svg>
   </div>
-</div><div>
-  <h2 className="text-2xl font-semibold text-gray-900">Ayila Parimala</h2>
-  <div className="flex items-center gap-2 mt-2 text-gray-600">
-    <span>parimalaayila1@gmail.com</span>
-<button className="text-gray-400 hover:text-gray-600">
-<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-</button>
+  {/* Content */}
+  <div className="flex items-center gap-6 relative z-10">
+    {/* Avatar */}
+    <div className="relative">
+      <div className="w-40 h-40 bg-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-md">
+        <svg className="w-20 h-20 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+    </div>
+    {/* User Info */}
+    <div className="ml-8">
+      <h2 className="text-2xl font-semibold text-gray-900 mb-2">Ayila Parimala</h2>
+      <div className="flex items-center gap-2 text-gray-600 mb-1">
+        <span className="text-base">parimalaayila1@gmail.com</span>
+        <button className="text-gray-400 hover:text-gray-600 transition-colors">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+        </button>
+      </div>
+      <p className="text-gray-600 text-base">+91 8332883854</p>
+    </div>
+  </div>
 </div>
-<p className="text-gray-600 mt-1">+91 8332883854</p>
-</div>
-</div>
-</div>
-
 {/* Tabs */}
 <div className="border-b border-gray-200">
 <div className="flex px-8 gap-2">
@@ -225,13 +237,12 @@ Experience
 </button>
 </div>
 </div>
-
 {/* Tab Content */}
 {activeTab === 'basic' && (
 <div className="p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Basic Details</h3>
-<button className="text-purple-600 hover:text-purple-700">
+<button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
@@ -273,48 +284,65 @@ Experience
     </div>
   </div>
 
-  {/* Row 2: Year of birth, Gender, Phone number, Alternate Phone no */}
-  <div className="grid grid-cols-4 gap-6">
-    <div>
-      <label className="block text-sm text-gray-600 mb-2">Year of birth</label>
-      <select
-        value={profileData.yearOfBirth}
-        onChange={(e) => handleProfileChange('yearOfBirth', e.target.value)}
-        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-      >
-        <option value="">YYYY</option>
-        {Array.from({ length: 80 }, (_, i) => 2024 - i).map(year => (
-          <option key={year} value={year}>{year}</option>
-        ))}
-      </select>
-    </div>
-    <div>
-      <label className="block text-sm text-gray-600 mb-2">Gender</label>
-      <select
-        value={profileData.gender}
-        onChange={(e) => handleProfileChange('gender', e.target.value)}
-        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-      >
-        <option value="">Select an option</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+  {/* Row 2: Year of birth + Gender (combined width of First name), Phone number (below Last name), Alternate Phone no (below Email ID) */}
+  <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm text-gray-600 mb-2">Year of birth</label>
+        <select
+          value={profileData.yearOfBirth}
+          onChange={(e) => handleProfileChange('yearOfBirth', e.target.value)}
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        >
+          <option value="">YYYY</option>
+          {Array.from({ length: 80 }, (_, i) => 2024 - i).map(year => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm text-gray-600 mb-2">Gender</label>
+        <select
+          value={profileData.gender}
+          onChange={(e) => handleProfileChange('gender', e.target.value)}
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        >
+          <option value="">Select an option</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
     </div>
     <div>
       <label className="block text-sm text-gray-600 mb-2">Phone number</label>
-    <div className="flex gap-2">
-  <select className="w-16 px-2 py-2 bg-gray-100 border border-gray-300 rounded-md text-center" style={{ fontSize: '1.2rem' }}>
-    <option value="+91">🇮🇳</option>
-    <option value="+1">🇺🇸</option>
-    <option value="+44">🇬🇧</option>
-  </select>
+      <div className="relative">
+        <select 
+          value={selectedCountryCode}
+          onChange={(e) => setSelectedCountryCode(e.target.value)}
+          className="absolute left-0 top-0 h-full w-24 px-2 bg-gray-100 border border-gray-300 rounded-l-md border-r-0 text-sm appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500 focus:z-10" 
+          style={{
+            backgroundImage: selectedCountryCode === '+91' 
+              ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Crect width='900' height='600' fill='%23FF9933'/%3E%3Crect y='200' width='900' height='200' fill='%23FFFFFF'/%3E%3Crect y='400' width='900' height='200' fill='%23138808'/%3E%3Ccircle cx='450' cy='300' r='40' fill='%23000080'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
+              : selectedCountryCode === '+1'
+              ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Crect width='7410' height='3900' fill='%23B22234'/%3E%3Cpath d='M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0' stroke='%23fff' stroke-width='300'/%3E%3Crect width='2964' height='2100' fill='%233C3B6E'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`
+              : `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")`,
+            backgroundSize: '16px 12px, 12px 12px',
+            backgroundPosition: '6px center, right 6px center',
+            backgroundRepeat: 'no-repeat',
+            paddingLeft: '28px',
+            paddingRight: '24px'
+          }}>
+          <option value="+91">+91</option>
+          <option value="+1">+1</option>
+          <option value="+44">+44</option>
+        </select>
         <input
           type="text"
           placeholder="8332883854"
           value={profileData.phone}
           onChange={(e) => handleProfileChange('phone', e.target.value)}
-          className="flex-1 px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full pl-24 pr-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
         />
       </div>
     </div>
@@ -330,29 +358,44 @@ Experience
     </div>
   </div>
 
- {/* Row 3: Address, Pincode/Domicile country, Domicile state */}
+  {/* Row 3: Address (below Year of birth + Gender), Pincode + Domicile country (below Phone number), Domicile state (below Alternate Phone no) */}
   <div className="grid grid-cols-3 gap-6">
-    <div className="row-span-2">
+    <div>
       <label className="block text-sm text-gray-600 mb-2">Address</label>
       <textarea
         placeholder="Enter here"
         value={profileData.address}
         onChange={(e) => handleProfileChange('address', e.target.value)}
-        rows="6"
-        className="w-full h-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+        rows="5"
+        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
       />
+    </div>
+    <div className="space-y-6">
+      <div>
+        <label className="block text-sm text-gray-600 mb-2">Pincode</label>
+        <input
+          type="text"
+          placeholder="Enter here"
+          value={profileData.pincode}
+          onChange={(e) => handleProfileChange('pincode', e.target.value)}
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label className="block text-sm text-gray-600 mb-2">Domicile country</label>
+        <select
+          value={profileData.domicileCountry}
+          onChange={(e) => handleProfileChange('domicileCountry', e.target.value)}
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        >
+          <option value="">Select an option</option>
+          <option value="india">India</option>
+          <option value="usa">United States</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+      </div>
     </div>
     <div>
-      <label className="block text-sm text-gray-600 mb-2">Pincode</label>
-      <input
-        type="text"
-        placeholder="Enter here"
-        value={profileData.pincode}
-        onChange={(e) => handleProfileChange('pincode', e.target.value)}
-        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-      />
-    </div>
-    <div className="row-span-2">
       <label className="block text-sm text-gray-600 mb-2">Domicile state</label>
       <select
         value={profileData.domicileState}
@@ -363,19 +406,6 @@ Experience
         <option value="delhi">Delhi</option>
         <option value="mumbai">Mumbai</option>
         <option value="bangalore">Bangalore</option>
-      </select>
-    </div>
-    <div>
-      <label className="block text-sm text-gray-600 mb-2">Domicile country</label>
-      <select
-        value={profileData.domicileCountry}
-        onChange={(e) => handleProfileChange('domicileCountry', e.target.value)}
-        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-      >
-        <option value="">Select an option</option>
-        <option value="india">India</option>
-        <option value="usa">United States</option>
-        <option value="uk">United Kingdom</option>
       </select>
     </div>
   </div>
