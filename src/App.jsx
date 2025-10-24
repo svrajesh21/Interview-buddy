@@ -142,8 +142,8 @@ Add user
 <table className="w-full">
 <thead>
 <tr className="border-b border-gray-200 bg-gray-100">
-<th className="pl-6 pr-8 py-3 text-left text-xs font-semibold text-gray-700">Sr. No</th>
-<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">User name</th>
+<th className="pl-6 pr-4 py-3 text-left text-xs font-semibold text-gray-700">Sr. No</th>
+<th className="pl-0 pr-6 py-3 text-left text-xs font-semibold text-gray-700">User name</th>
 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">E-mail</th>
 <th className="px-6 py-3 text-right text-xs font-semibold text-gray-700">Action</th>
 </tr>
@@ -151,8 +151,8 @@ Add user
 <tbody>
 {users.map((user, index) => (
 <tr key={user.id} className="border-b border-gray-200">
-<td className="pl-6 pr-8 py-4 text-sm text-gray-900">{index + 1}</td>
-<td className="px-6 py-4 text-sm text-gray-900">{user.name}</td>
+<td className="pl-6 pr-4 py-4 text-sm text-gray-900">{index + 1}</td>
+<td className="pl-0 pr-6 py-4 text-sm text-gray-900">{user.name}</td>
 <td className="px-6 py-4 text-sm text-gray-900">{user.email}</td>
 <td className="px-6 py-4">
 <div className="flex items-center gap-3 justify-end">
