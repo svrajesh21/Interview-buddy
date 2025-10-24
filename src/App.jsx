@@ -90,9 +90,10 @@ return (
 {/* Header */}
 <header className="bg-white border-b border-gray-200 shadow-sm">
   <div className="w-full px-6 py-4 flex items-center">
-    <img src="https://media.licdn.com/dms/image/sync/v2/D5627AQEExz9IHVAMhQ/articleshare-shrink_800/B56Zk9_A22H8AI-/0/1757681553241?e=2147483647&v=beta&t=EGoaQOgT6pB0JcjJXFx9Si9eDM5DcyQ-T5o27C5CzCw"
-alt="Interview Buddy"
-className="h-8"
+ <img 
+  src="/profile-section.webp"
+  alt="LOGO"
+  className="h-12"
 />
     <div className="flex items-center gap-2 ml-auto mr-0">
 <button className="p-2 text-gray-600 hover:text-gray-900">
