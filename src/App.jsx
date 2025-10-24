@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 function App() {
 const [users, setUsers] = useState([
-  { id: '1', name: 'Ayila Parimala', email: 'parimalaayila1@gmail.com' },
-  { id: '2', name: 'V Alokya', email: 'alokya_v@gmail.com' },
-  { id: '3', name: 'L Aparna', email: 'l.aparna@gmail.com' }
+  { id: '1', name: 'Dave Richards', email: 'dave@mail.com' },
+  { id: '2', name: 'Abhishek Hari', email: 'hari@mail.com' },
+  { id: '3', name: 'Nishta Gupta', email: 'nishta@mail.com' }
 ]);
 const [isModalOpen, setIsModalOpen] = useState(false);
 const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -201,9 +201,9 @@ Add user
     </div>
     {/* User Info */}
     <div className="ml-8">
-      <h2 className="text-2xl font-semibold text-gray-900 mb-2">Ayila Parimala</h2>
+      <h2 className="text-2xl font-semibold text-gray-900 mb-2">Dave Richards</h2>
       <div className="flex items-center gap-2 text-gray-600 mb-1">
-        <span className="text-base">parimalaayila1@gmail.com</span>
+        <span className="text-base">dave@mail.com</span>
         <button className="text-gray-400 hover:text-gray-600 transition-colors">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -413,11 +413,10 @@ Add user
 </div>
 </div>
 )}
-
 {activeTab === 'education' && (
-<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 space-y-6">
-  {/* Education Details */}
-  <div className="border border-gray-200 rounded-lg p-6 bg-white">
+<>
+  {/* Education Details - Separate Container */}
+  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
    <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Education Details</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -457,9 +456,9 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
   </div>
   <div>
     <label className="block text-sm text-gray-600 mb-2">Year of completion</label>
-    <select className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+    <select className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400">
       <option value="">YYYY</option>
-      {Array.from({ length: 50 }, (_, i) => 2024 - i).map(year => (
+      {Array.from({ length: 53 }, (_, i) => 2027 - i).map(year => (
         <option key={year} value={year}>{year}</option>
       ))}
     </select>
@@ -475,8 +474,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 
-{/* Skills & Projects */}
-<div className="border border-gray-200 rounded-lg p-6 bg-white">
+{/* Skills & Projects - Separate Container */}
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
   <div className="flex items-center justify-between mb-6">
   <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3>
   <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -505,9 +504,11 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 </div>
-</div>
+</>
 )}
 {activeTab === 'experience' && (
+<>
+{/* Work Experience - Separate Container */}
 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Work Experience</h3>
@@ -570,7 +571,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 />
 </div>
 
-<div className="pl-6 mb-8 border-l-2 border-gray-300">
+<div className="pl-6 border-l-2 border-gray-300">
 <div className="grid grid-cols-2 gap-6">
 <div>
 <label className="block text-sm text-gray-600 mb-2">Sub-domain</label>
@@ -598,11 +599,12 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 </div>
+</div>
 
-{/* LinkedIn and Resume Row in separate white boxes */}
+{/* LinkedIn and Resume side by side */}
 <div className="grid grid-cols-2 gap-6">
 {/* LinkedIn Box */}
-<div className="border border-gray-200 rounded-lg p-6 bg-white">
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">LinkedIn</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -624,7 +626,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 
 {/* Resume Box */}
-<div className="border border-gray-200 rounded-lg p-6 bg-white">
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">Resume</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -642,7 +644,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 </div>
-</div>
+</>
 )}
 </div>
 )}
