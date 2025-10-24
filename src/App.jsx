@@ -138,10 +138,10 @@ Add user
 <table className="w-full">
 <thead>
 <tr className="border-b border-gray-200 bg-gray-50">
-<th className="px-6 py-3 text-left text-xs font-medium text-gray-500">Sr. No</th>
-<th className="px-6 py-3 text-left text-xs font-medium text-gray-500">User name</th>
-<th className="px-6 py-3 text-left text-xs font-medium text-gray-500">E-mail</th>
-<th className="px-6 py-3 text-left text-xs font-medium text-gray-500">Action</th>
+<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">Sr. No</th>
+<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">User name</th>
+<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">E-mail</th>
+<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">Action</th>
 </tr>
 </thead>
 <tbody>
@@ -198,7 +198,7 @@ Add user
         </svg>
       </div>
     </div>
-    {/* User Info */}
+ {/* User Info */}
     <div className="ml-8">
       <h2 className="text-2xl font-semibold text-gray-900 mb-2">Ayila Parimala</h2>
       <div className="flex items-center gap-2 text-gray-600 mb-1">
@@ -213,33 +213,35 @@ Add user
     </div>
   </div>
 </div>
-{/* Tabs */}
-<div className="border-b border-gray-200">
-<div className="flex px-8 gap-2">
-<button
-onClick={() => setActiveTab('basic')}
-className={`px-4 py-2.5 text-sm font-medium rounded-t-md ${activeTab === 'basic' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-600 hover:text-gray-900'}`}
->
-Basic Info
-</button>
-<button
-onClick={() => setActiveTab('education')}
-className={`px-4 py-2.5 text-sm font-medium rounded-t-md relative ${activeTab === 'education' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-600 hover:text-gray-900'}`}
->
-Education & skills
-<span className="absolute top-1.5 right-1.5 w-2 h-2 bg-orange-500 rounded-full"></span>
-</button>
-<button
-onClick={() => setActiveTab('experience')}
-className={`px-4 py-2.5 text-sm font-medium rounded-t-md ${activeTab === 'experience' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-600 hover:text-gray-900'}`}
->
-Experience
-</button>
+
+{/* Tabs - Floating in the gap with NO background */}
+<div className="px-8 py-6">
+  <div className="flex gap-2">
+  <button
+    onClick={() => setActiveTab('basic')}
+    className={`px-4 py-2.5 text-sm font-medium rounded-t-md ${activeTab === 'basic' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-400 hover:text-gray-600'}`}
+  >
+    Basic Info
+  </button>
+  <button
+    onClick={() => setActiveTab('education')}
+    className={`px-4 py-2.5 text-sm font-medium rounded-t-md relative ${activeTab === 'education' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-400 hover:text-gray-600'}`}
+  >
+    Education & skills
+    <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-orange-500 rounded-full"></span>
+  </button>
+  <button
+    onClick={() => setActiveTab('experience')}
+    className={`px-4 py-2.5 text-sm font-medium rounded-t-md ${activeTab === 'experience' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-400 hover:text-gray-600'}`}
+  >
+    Experience
+  </button>
 </div>
 </div>
+
 {/* Tab Content */}
 {activeTab === 'basic' && (
-<div className="p-8">
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Basic Details</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -292,7 +294,7 @@ Experience
         <select
           value={profileData.yearOfBirth}
           onChange={(e) => handleProfileChange('yearOfBirth', e.target.value)}
-          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
         >
           <option value="">YYYY</option>
           {Array.from({ length: 80 }, (_, i) => 2024 - i).map(year => (
@@ -305,7 +307,7 @@ Experience
         <select
           value={profileData.gender}
           onChange={(e) => handleProfileChange('gender', e.target.value)}
-          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
         >
           <option value="">Select an option</option>
           <option value="male">Male</option>
@@ -386,7 +388,7 @@ Experience
         <select
           value={profileData.domicileCountry}
           onChange={(e) => handleProfileChange('domicileCountry', e.target.value)}
-          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
         >
           <option value="">Select an option</option>
           <option value="india">India</option>
@@ -400,7 +402,7 @@ Experience
       <select
         value={profileData.domicileState}
         onChange={(e) => handleProfileChange('domicileState', e.target.value)}
-        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
       >
         <option value="">Select an option</option>
         <option value="delhi">Delhi</option>
@@ -409,16 +411,15 @@ Experience
       </select>
     </div>
   </div>
-</div>
-</div>
+</div></div>
 )}
 {activeTab === 'education' && (
 <div className="p-8 space-y-6">
   {/* Education Details */}
   <div className="border border-gray-200 rounded-lg p-6 bg-white">
-    <div className="flex items-center justify-between mb-6">
+   <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Education Details</h3>
-<button className="text-purple-600 hover:text-purple-700">
+<button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
@@ -475,7 +476,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {/* Skills & Projects */}
 <div className="border border-gray-200 rounded-lg p-6 bg-white">
   <div className="flex items-center justify-between mb-6">
-    <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3><button className="text-purple-600 hover:text-purple-700">
+  <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3><button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
@@ -508,13 +509,12 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <div className="p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Work Experience</h3>
-<button className="text-purple-600 hover:text-purple-700">
+<button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
 </button>
 </div>
-
 {/* First Domain Group */}
 <div className="mb-4">
 <label className="block text-sm text-gray-600 mb-2">Domain</label>
@@ -544,15 +544,14 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <select
 value={profileData.experience1}
 onChange={(e) => handleProfileChange('experience1', e.target.value)}
-className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
 >
 <option value="">Select an option</option>
 <option value="0-1">0-1 years</option>
 <option value="1-3">1-3 years</option>
 <option value="3-5">3-5 years</option>
 <option value="5+">5+ years</option>
-</select>
-</div>
+</select></div>
 </div>
 </div>
 
@@ -585,15 +584,14 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <select
 value={profileData.experience2}
 onChange={(e) => handleProfileChange('experience2', e.target.value)}
-className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-400"
 >
 <option value="">Select an option</option>
 <option value="0-1">0-1 years</option>
 <option value="1-3">1-3 years</option>
 <option value="3-5">3-5 years</option>
 <option value="5+">5+ years</option>
-</select>
-</div>
+</select></div>
 </div>
 </div>
 
@@ -603,13 +601,12 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <div className="border border-gray-200 rounded-lg p-6 bg-white">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">LinkedIn</h3>
-<button className="text-purple-600 hover:text-purple-700">
+<button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
 </button>
-</div>
-<div>
+</div><div>
 <label className="block text-sm text-gray-600 mb-2">Profile URL</label>
 <input
 type="text"
@@ -625,13 +622,12 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <div className="border border-gray-200 rounded-lg p-6 bg-white">
 <div className="flex items-center justify-between mb-4">
 <h3 className="text-lg font-semibold text-gray-900">Resume</h3>
-<button className="text-purple-600 hover:text-purple-700">
+<button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
 </button>
-</div>
-<div className="flex items-center gap-2 mt-8">
+</div><div className="flex items-center gap-2 mt-8">
 <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
 </svg>
