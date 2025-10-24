@@ -109,12 +109,14 @@ return (
 </svg>
 </button>
 <button
-onClick={() => setShowProfile(!showProfile)}
-className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200"
+  onClick={() => setShowProfile(!showProfile)}
+  className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 overflow-hidden"
 >
-<svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-</svg>
+  <img 
+    src="/profile.webp"
+    alt="Profile"
+    className="w-full h-full object-cover scale-125"
+  />
 </button>
 </div>
 </div>
@@ -193,13 +195,15 @@ Add user
   {/* Content */}
   <div className="flex items-center gap-6 relative z-10">
     {/* Avatar */}
-    <div className="relative">
-      <div className="w-40 h-40 bg-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-md">
-        <svg className="w-20 h-20 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-        </svg>
-      </div>
-    </div>
+<div className="relative">
+  <div className="w-40 h-40 bg-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
+    <img 
+      src="/profile.webp"
+      alt="Profile"
+      className="w-full h-full object-cover scale-125"
+    />
+  </div>
+</div>
     {/* User Info */}
     <div className="ml-8">
       <h2 className="text-2xl font-semibold text-gray-900 mb-2">Dave Richards</h2>
