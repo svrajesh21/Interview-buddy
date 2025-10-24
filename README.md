@@ -34,17 +34,18 @@ Built using **React + Tailwind CSS**, this project demonstrates modular UI desig
 
 ## 📂 Project Setup
 
-### 1️⃣ Clone the Repository
+## 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/user-profiles-management.git
 cd user-profiles-management
+```
 
-### 2️⃣ Install Dependencies
+## 2️⃣ Install Dependencies
 ```bash
 npm install
 ```
 
-### 3️⃣ Start the Development Server
+## 3️⃣ Start the Development Server
 ```bash
 npm start
 ```
