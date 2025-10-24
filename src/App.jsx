@@ -115,9 +115,9 @@ return (
   className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 overflow-hidden"
 >
   <img 
-    src="/profile.webp"
+    src="/avatar.png"
     alt="Profile"
-    className="w-full h-full object-cover scale-125"
+    className="w-full h-full object-cover scale-120"
   />
 </button>
 </div>
