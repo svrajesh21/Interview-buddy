@@ -97,16 +97,18 @@ return (
 />
     <div className="flex items-center gap-2 ml-auto mr-0">
 <button className="p-2 text-gray-600 hover:text-gray-900">
-<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 14v-3a8 8 0 1 1 16 0v3" />
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 14a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3z" />
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 14a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3z" />
-</svg>
+<img 
+  src="/headset.png"
+  alt="Headset"
+  className="w-5 h-5"
+/>
 </button>
 <button className="p-2 text-gray-600 hover:text-gray-900">
-<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-</svg>
+<img 
+  src="/bell.png"
+  alt="Notifications"
+  className="w-5 h-5"
+/>
 </button>
 <button
   onClick={() => setShowProfile(!showProfile)}
@@ -120,9 +122,7 @@ return (
 </button>
 </div>
 </div>
-</header>
-
-{/* Main Content */}
+</header>{/* Main Content */}
 <main className="w-full px-6 py-8">
 {!showProfile ? (
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -130,7 +130,7 @@ return (
 <h1 className="text-xl font-semibold text-gray-900">Users</h1>
 <button
 onClick={handleAddUser}
-className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 flex items-center gap-2"
+className="px-4 py-2 bg-violet-600 text-white rounded-md hover:bg-violet-700 flex items-center gap-2"
 >
 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
@@ -141,21 +141,21 @@ Add user
 
 <table className="w-full">
 <thead>
-<tr className="border-b border-gray-200 bg-gray-50">
-<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">Sr. No</th>
+<tr className="border-b border-gray-200 bg-gray-100">
+<th className="pl-6 pr-8 py-3 text-left text-xs font-semibold text-gray-700">Sr. No</th>
 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">User name</th>
 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">E-mail</th>
-<th className="px-6 py-3 text-left text-xs font-semibold text-gray-700">Action</th>
+<th className="px-6 py-3 text-right text-xs font-semibold text-gray-700">Action</th>
 </tr>
 </thead>
 <tbody>
 {users.map((user, index) => (
 <tr key={user.id} className="border-b border-gray-200">
-<td className="px-6 py-4 text-sm text-gray-900">{index + 1}</td>
+<td className="pl-6 pr-8 py-4 text-sm text-gray-900">{index + 1}</td>
 <td className="px-6 py-4 text-sm text-gray-900">{user.name}</td>
 <td className="px-6 py-4 text-sm text-gray-900">{user.email}</td>
 <td className="px-6 py-4">
-<div className="flex items-center gap-3">
+<div className="flex items-center gap-3 justify-end">
 <button onClick={() => handleEditUser(user)} className="text-gray-400 hover:text-gray-600">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -185,7 +185,7 @@ Add user
     <svg className="absolute" style={{ left: '-20%', top: '-80%', width: '40%', height: '250%' }} viewBox="0 0 400 400" fill="none">
       <circle cx="200" cy="200" r="180" fill="#FEFAFF" opacity="0.9"/>
     </svg>
-    {/* Semi-concentric circles facing right with huge gaps */}
+{/* Semi-concentric circles facing right with huge gaps */}
     <svg className="absolute" style={{ right: '-35%', top: '-120%', width: '140%', height: '350%' }} viewBox="0 0 1000 1000" fill="none">
       <path d="M 500 220 A 280 280 0 0 1 500 780" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
       <path d="M 500 70 A 430 430 0 0 1 500 930" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
