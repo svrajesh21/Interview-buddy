@@ -39,13 +39,21 @@ Built using **React + Tailwind CSS**, this project demonstrates modular UI desig
 git clone https://github.com/<your-username>/user-profiles-management.git
 cd user-profiles-management
 ### 2️⃣ Install Dependencies
+```bash
 npm install
-### 3️⃣ Start the Development Server
-npm start
+```
 
-Your app will be running on http://localhost:3000/ 🎉
+### 3️⃣ Start the Development Server
+```bash
+npm start
+```
+
+Your app will be running on **http://localhost:3000/** 🎉
+
+---
 
 ### 🧱 Project Structure
+```
 user-profiles-management/
 │
 ├── src/
@@ -64,3 +72,5 @@ user-profiles-management/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+```
+
