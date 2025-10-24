@@ -120,7 +120,8 @@ className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center h
 </header>
 
 {/* Main Content */}
-<main className="w-full px-6 py-8">{!showProfile ? (
+<main className="w-full px-6 py-8">
+{!showProfile ? (
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
 <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
 <h1 className="text-xl font-semibold text-gray-900">Users</h1>
@@ -171,10 +172,10 @@ Add user
 </table>
 </div>
 ) : (
-/* Profile Page */
+<div className="space-y-6">
+{/* Profile Header - Separate Container */}
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-{/* Profile Header */}
-<div className="px-8 py-6 border-b border-gray-200 relative overflow-hidden bg-white">
+<div className="px-8 py-6 relative overflow-hidden">
   {/* Background decorative circles */}
   <div className="absolute inset-0 pointer-events-none">
     {/* Large purple circle on left */}
@@ -198,7 +199,7 @@ Add user
         </svg>
       </div>
     </div>
- {/* User Info */}
+    {/* User Info */}
     <div className="ml-8">
       <h2 className="text-2xl font-semibold text-gray-900 mb-2">Ayila Parimala</h2>
       <div className="flex items-center gap-2 text-gray-600 mb-1">
@@ -213,10 +214,9 @@ Add user
     </div>
   </div>
 </div>
-
-{/* Tabs - Floating in the gap with NO background */}
-<div className="px-8 py-6">
-  <div className="flex gap-2">
+</div>
+{/* Tabs - No container, just buttons floating */}
+<div className="flex gap-2">
   <button
     onClick={() => setActiveTab('basic')}
     className={`px-4 py-2.5 text-sm font-medium rounded-t-md ${activeTab === 'basic' ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-400 hover:text-gray-600'}`}
@@ -237,9 +237,8 @@ Add user
     Experience
   </button>
 </div>
-</div>
 
-{/* Tab Content */}
+{/* Tab Content - Separate Container */}
 {activeTab === 'basic' && (
 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
@@ -411,10 +410,12 @@ Add user
       </select>
     </div>
   </div>
-</div></div>
+</div>
+</div>
 )}
+
 {activeTab === 'education' && (
-<div className="p-8 space-y-6">
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 space-y-6">
   {/* Education Details */}
   <div className="border border-gray-200 rounded-lg p-6 bg-white">
    <div className="flex items-center justify-between mb-6">
@@ -471,12 +472,14 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
       className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
     />
   </div>
-</div></div>
+</div>
+</div>
 
 {/* Skills & Projects */}
 <div className="border border-gray-200 rounded-lg p-6 bg-white">
   <div className="flex items-center justify-between mb-6">
-  <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3><button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
+  <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3>
+  <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
@@ -504,9 +507,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 )}
-
 {activeTab === 'experience' && (
-<div className="p-8">
+<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Work Experience</h3>
 <button className="p-2 bg-purple-100 rounded-md text-purple-600 hover:bg-purple-200">
@@ -551,7 +553,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <option value="1-3">1-3 years</option>
 <option value="3-5">3-5 years</option>
 <option value="5+">5+ years</option>
-</select></div>
+</select>
+</div>
 </div>
 </div>
 
@@ -591,7 +594,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <option value="1-3">1-3 years</option>
 <option value="3-5">3-5 years</option>
 <option value="5+">5+ years</option>
-</select></div>
+</select>
+</div>
 </div>
 </div>
 
@@ -606,7 +610,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
 </button>
-</div><div>
+</div>
+<div>
 <label className="block text-sm text-gray-600 mb-2">Profile URL</label>
 <input
 type="text"
@@ -627,7 +632,8 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 </svg>
 </button>
-</div><div className="flex items-center gap-2 mt-8">
+</div>
+<div className="flex items-center gap-2 mt-8">
 <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
 </svg>
@@ -645,8 +651,9 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {/* Add/Edit Modal */}
 {isModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-    <div className="absolute right-0 top-0 h-full w-1/2 bg-white shadow-2xl p-8 overflow-y-auto">      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 shadow-sm">
-  <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
+    <div className="absolute right-0 top-0 h-full w-1/2 bg-white shadow-2xl p-8 overflow-y-auto">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 shadow-sm">
+        <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
         <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-gray-600">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
