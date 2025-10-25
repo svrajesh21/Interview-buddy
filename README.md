@@ -59,20 +59,25 @@ Your app will be running on **http://localhost:3000/** 🎉
 user-profiles-management/
 │
 ├── src/
-│   ├── App.jsx            # Main application component
-│   ├── index.js           # React entry point
-│   ├── assets/            # Images and icons (logo, bell, avatar, etc.)
-│   └── styles/            # Tailwind setup (if configured)
+│   ├── App.jsx                  # Main application component
+│   ├── index.js                 # React entry point
+│   ├── assets/                  # For additional images or icons
+│   │   ├── copy.png
+│   │   └── profile.webp
+│   ├── styles/                  # Tailwind or custom CSS
+│   │   └── index.css
 │
 ├── public/
-│   ├── profile-section.webp
 │   ├── avatar.png
-│   ├── headset.png
 │   ├── bell.png
-│   └── flag.png
+│   ├── headset.png
+│   ├── flag.png
+│   ├── profile-section.webp
+│   ├── index.html
 │
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+
 ```
 
