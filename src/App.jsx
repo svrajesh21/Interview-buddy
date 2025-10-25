@@ -657,16 +657,16 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 {/* Add/Edit Modal */}
 {isModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-    <div className="absolute right-0 top-0 h-full w-1/2 bg-white shadow-2xl p-8 overflow-y-auto">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 shadow-sm">        <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
+    <div className="absolute right-0 top-0 h-full w-1/2 bg-white shadow-2xl overflow-y-auto">
+      <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200 shadow-md">
+        <h2 className="text-xl font-semibold text-gray-900">{modalMode === 'edit' ? 'Edit User' : 'Add User'}</h2>
         <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-gray-600">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-      <div className="space-y-4">
-        <div>
+      <div className="p-8">        <div>
           <label className="block text-sm text-gray-600 mb-2">Name of the user</label>
           <input
             type="text"
