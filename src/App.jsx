@@ -192,13 +192,21 @@ Add user
   {/* Content */}
   <div className="flex items-center gap-6 relative z-10">
     {/* Avatar */}
-<div className="relative">
+<div className="relative group cursor-pointer">
   <div className="w-40 h-40 bg-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
     <img 
       src="/profile.webp"
       alt="Profile"
       className="w-full h-full object-cover scale-125"
     />
+  </div>
+  {/* Hover Overlay */}
+  <div className="absolute inset-0 bg-gray-600 bg-opacity-70 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+      <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+      </svg>
+    </div>
   </div>
 </div>
     {/* User Info */}
