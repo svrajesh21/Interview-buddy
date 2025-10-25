@@ -176,16 +176,13 @@ Add user
 </div>
 ) : (
 <div className="space-y-6">
-{/* Profile Header - Separate Container */}
+{/* Profile Header */}
 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
 <div className="px-8 py-6 relative overflow-hidden">
-  {/* Background decorative circles */}
   <div className="absolute inset-0 pointer-events-none">
-    {/* Large purple circle on left */}
     <svg className="absolute" style={{ left: '-20%', top: '-80%', width: '40%', height: '250%' }} viewBox="0 0 400 400" fill="none">
       <circle cx="200" cy="200" r="180" fill="#FEFAFF" opacity="0.9"/>
     </svg>
-{/* Semi-concentric circles facing right with huge gaps */}
     <svg className="absolute" style={{ right: '-35%', top: '-120%', width: '140%', height: '350%' }} viewBox="0 0 1000 1000" fill="none">
       <path d="M 500 220 A 280 280 0 0 1 500 780" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
       <path d="M 500 70 A 430 430 0 0 1 500 930" stroke="#F0EBFF" strokeWidth="1" fill="none"/>
@@ -243,7 +240,7 @@ Add user
   </button>
 </div>
 
-{/* Tab Content - Separate Container */}
+{/* Tab Content */}
 {activeTab === 'basic' && (
 <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
@@ -290,7 +287,7 @@ Add user
     </div>
   </div>
 
-  {/* Row 2: Year of birth + Gender (combined width of First name), Phone number (below Last name), Alternate Phone no (below Email ID) */}
+  {/* Row 2: Year of birth & Gender , Phone number , Alternate Phone no  */}
   <div className="grid grid-cols-3 gap-6">
     <div className="grid grid-cols-2 gap-4">
       <div>
@@ -364,7 +361,7 @@ Add user
     </div>
   </div>
 
-  {/* Row 3: Address (below Year of birth + Gender), Pincode + Domicile country (below Phone number), Domicile state (below Alternate Phone no) */}
+  {/* Row 3: Address , Pincode & Domicile country, Domicile state */}
   <div className="grid grid-cols-3 gap-6">
     <div>
       <label className="block text-sm text-gray-600 mb-2">Address</label>
@@ -420,7 +417,7 @@ Add user
 )}
 {activeTab === 'education' && (
 <>
-  {/* Education Details - Separate Container */}
+  {/* Education Details  */}
   <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
    <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Education Details</h3>
@@ -479,7 +476,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 
-{/* Skills & Projects - Separate Container */}
+{/* Skills & Projects  */}
 <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
   <div className="flex items-center justify-between mb-6">
   <h3 className="text-lg font-semibold text-gray-900">Skills & Projects</h3>
@@ -513,7 +510,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 )}
 {activeTab === 'experience' && (
 <>
-{/* Work Experience - Separate Container */}
+{/* Work Experience */}
 <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
 <div className="flex items-center justify-between mb-6">
 <h3 className="text-lg font-semibold text-gray-900">Work Experience</h3>
@@ -606,7 +603,7 @@ className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:
 </div>
 </div>
 
-{/* LinkedIn and Resume side by side */}
+{/* LinkedIn and Resume  */}
 <div className="grid grid-cols-2 gap-6">
 {/* LinkedIn Box */}
 <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
